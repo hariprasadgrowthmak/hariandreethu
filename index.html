@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="description"
+    content="A magical, interactive birthday experience crafted with love. Happy Birthday, my love!" />
+  <meta name="theme-color" content="#0D0D1A" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Happy Birthday, My Love 💝" />
+  <meta property="og:description" content="A special birthday wish made just for you." />
+  <meta property="og:type" content="website" />
+
+  <title>Happy Birthday, My Love 💝</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+    rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress-bar"></div>
+  </div>
+
+  <!-- Particle Canvas -->
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+
+  <!-- Fireworks Canvas -->
+  <canvas id="fireworks-canvas" aria-hidden="true"></canvas>
+
+  <!-- ============================================
+       HERO / OPENING SCREEN
+       ============================================ -->
+  <div id="hero-screen" role="banner">
+    <div class="star-field" aria-hidden="true"></div>
+
+    <div id="birthday-badge" data-month="3" data-day="14" aria-live="polite"></div>
+
+    <div class="hero-content">
+      <h1 id="hero-title" data-text="Advance Happy Birthday My Love">Advance Happy Birthday My Love</h1>
+
+      <p id="hero-subtitle">
+        ✨ 8 days early, but my love for you can't wait ✨
+      </p>
+
+      <button id="enter-btn" aria-label="Enter the birthday experience">
+        Enter Our World
+      </button>
+    </div>
+  </div>
+
+  <!-- ============================================
+       MAIN CONTENT (hidden until Enter is clicked)
+       ============================================ -->
+  <main id="main-content">
+
+    <!-- ---- COUNTDOWN SECTION ---- -->
+    <section id="countdown-section">
+      <h2 class="section-title animate-on-scroll" data-animation="fadeInUp">
+        ✨ Counting Every Moment ✨
+      </h2>
+      <div class="section-divider animate-on-scroll" data-delay="200"></div>
+      <div id="countdown" class="animate-on-scroll" data-delay="400"></div>
+    </section>
+
+    <!-- ---- PHOTO GALLERY ---- -->
+    <section id="gallery">
+      <h2 class="section-title animate-on-scroll" data-animation="fadeInUp">
+        📸 Our Beautiful Memories
+      </h2>
+      <div class="section-divider animate-on-scroll" data-delay="200"></div>
+      <div class="gallery-carousel" role="region" aria-label="Photo gallery">
+        <!-- Photos injected by gallery.js -->
+      </div>
+    </section>
+
+    <!-- ---- LOVE MESSAGE ---- -->
+    <section id="love-message">
+      <h2 class="section-title animate-on-scroll" data-animation="fadeInUp">
+        💌 A Letter From My Heart
+      </h2>
+      <div class="section-divider animate-on-scroll" data-delay="200"></div>
+
+      <div class="animate-on-scroll" data-delay="400">
+        <p id="love-message-text"
+          data-text="Every day with you feels like a beautiful dream I never want to wake up from. Your smile lights up my world, your laugh is my favorite melody, and your love is the greatest gift I've ever received. On this special day, I want you to know — you are my everything. Happy Birthday, my love. Here's to a lifetime of memories together. 💕">
+        </p>
+        <div class="typewriter-underline"></div>
+      </div>
+
+      <!-- Envelope -->
+      <div class="envelope animate-on-scroll" data-delay="600" id="envelope" role="button" tabindex="0"
+        aria-label="Open love letter envelope">
+        <div class="envelope-body"></div>
+        <div class="envelope-flap"></div>
+        <div class="envelope-letter">
+          <span>I love you ❤️</span>
+        </div>
+        <span class="envelope-heart" aria-hidden="true">💝</span>
+      </div>
+    </section>
+
+    <!-- ---- MEMORY TIMELINE ---- -->
+    <section id="timeline">
+      <h2 class="section-title animate-on-scroll" data-animation="fadeInUp">
+        💫 Our Journey Together
+      </h2>
+      <div class="section-divider animate-on-scroll" data-delay="200"></div>
+
+      <div class="timeline-container">
+        <div class="timeline-line" aria-hidden="true"></div>
+
+        <!-- Timeline Item 1 -->
+        <div class="timeline-item animate-on-scroll" data-animation="slide-right" data-delay="200">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-card">
+            <img src="WhatsApp Image 2026-03-06 at 6.55.11 PM.jpeg" alt="September 2023 — the moment it began"
+              loading="lazy" />
+            <div class="timeline-card-content">
+              <span class="timeline-date">September 2023</span>
+              <p>The moment our story began — I knew from the very first day that you were someone truly special 💕</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline Item 2 -->
+        <div class="timeline-item animate-on-scroll" data-animation="slide-left" data-delay="300">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-card">
+            <img src="WhatsApp Image 2026-03-06 at 6.55.05 PM.jpeg" alt="December 2023 — first holiday season"
+              loading="lazy" />
+            <div class="timeline-card-content">
+              <span class="timeline-date">December 2023</span>
+              <p>Our very first holiday season together — every twinkling light reminded me of you ✨</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline Item 3 -->
+        <div class="timeline-item animate-on-scroll" data-animation="slide-right" data-delay="400">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-card">
+            <img src="WhatsApp Image 2026-03-06 at 6.55.05 PM (1).jpeg" alt="March 2024 — 6 months together"
+              loading="lazy" />
+            <div class="timeline-card-content">
+              <span class="timeline-date">March 2024</span>
+              <p>6 months of us 🥂 — six months of laughter, warmth and growing love</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline Item 4 -->
+        <div class="timeline-item animate-on-scroll" data-animation="slide-left" data-delay="500">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-card">
+            <img src="WhatsApp Image 2026-03-06 at 6.55.08 PM.jpeg" alt="June 2024 — summer adventures"
+              loading="lazy" />
+            <div class="timeline-card-content">
+              <span class="timeline-date">June 2024</span>
+              <p>Summer adventures, sun-soaked days, and your beautiful smile everywhere I looked 🌞</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline Item 5 -->
+        <div class="timeline-item animate-on-scroll" data-animation="slide-right" data-delay="600">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-card">
+            <img src="WhatsApp Image 2026-03-06 at 6.55.12 PM (1).jpeg" alt="September 2024 — 1 year anniversary"
+              loading="lazy" />
+            <div class="timeline-card-content">
+              <span class="timeline-date">September 2024</span>
+              <p>Our 1 year anniversary ❤️ — one whole year of you being my favorite person in the world</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline Item 6 -->
+        <div class="timeline-item animate-on-scroll" data-animation="slide-left" data-delay="700">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-card">
+            <img src="WhatsApp Image 2026-03-06 at 6.55.09 PM.jpeg" alt="December 2024 — second holiday season"
+              loading="lazy" />
+            <div class="timeline-card-content">
+              <span class="timeline-date">December 2024</span>
+              <p>Our second holiday season — home is wherever you are 🎄</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline Item 7 -->
+        <div class="timeline-item animate-on-scroll" data-animation="slide-right" data-delay="800">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-card">
+            <img src="WhatsApp Image 2026-03-06 at 6.55.13 PM (1).jpeg" alt="September 2025 — 2 year anniversary"
+              loading="lazy" />
+            <div class="timeline-card-content">
+              <span class="timeline-date">September 2025</span>
+              <p>2 years of us 🌹 — two years and I fall for you more and more every single day</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline Item 8 -->
+        <div class="timeline-item animate-on-scroll" data-animation="slide-left" data-delay="900">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-card">
+            <img src="WhatsApp Image 2026-03-06 at 6.55.13 PM.jpeg" alt="December 2025 — New Year's Eve"
+              loading="lazy" />
+            <div class="timeline-card-content">
+              <span class="timeline-date">December 2025</span>
+              <p>New Year's Eve with you — the best way to close one chapter and begin the next 🥂✨</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline Item 9 — Present -->
+        <div class="timeline-item animate-on-scroll" data-animation="slide-right" data-delay="1000">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-card">
+            <img src="WhatsApp Image 2026-03-06 at 6.55.15 PM.jpeg" alt="March 2026 — today" loading="lazy" />
+            <div class="timeline-card-content">
+              <span class="timeline-date">March 2026 — Today 💝</span>
+              <p>2 years, 6 months and counting — and every single day with you has been the best day of my life 💖</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ---- INTERACTIVE CELEBRATION ---- -->
+    <section id="celebration">
+      <h2 class="section-title animate-on-scroll" data-animation="fadeInUp">
+        🎂 Make a Wish
+      </h2>
+      <div class="section-divider animate-on-scroll" data-delay="200"></div>
+
+      <div class="cake-container animate-on-scroll" data-animation="scaleIn" data-delay="400">
+        <!-- Candles -->
+        <div class="candles-row">
+          <div class="candle lit" role="button" tabindex="0" aria-label="Blow out candle 1">
+            <div class="candle-flame" aria-hidden="true"></div>
+            <div class="candle-wick" aria-hidden="true"></div>
+            <div class="candle-body"></div>
+            <div class="candle-smoke" aria-hidden="true"></div>
+          </div>
+          <div class="candle lit" role="button" tabindex="0" aria-label="Blow out candle 2">
+            <div class="candle-flame" aria-hidden="true"></div>
+            <div class="candle-wick" aria-hidden="true"></div>
+            <div class="candle-body"></div>
+            <div class="candle-smoke" aria-hidden="true"></div>
+          </div>
+          <div class="candle lit" role="button" tabindex="0" aria-label="Blow out candle 3">
+            <div class="candle-flame" aria-hidden="true"></div>
+            <div class="candle-wick" aria-hidden="true"></div>
+            <div class="candle-body"></div>
+            <div class="candle-smoke" aria-hidden="true"></div>
+          </div>
+          <div class="candle lit" role="button" tabindex="0" aria-label="Blow out candle 4">
+            <div class="candle-flame" aria-hidden="true"></div>
+            <div class="candle-wick" aria-hidden="true"></div>
+            <div class="candle-body"></div>
+            <div class="candle-smoke" aria-hidden="true"></div>
+          </div>
+          <div class="candle lit" role="button" tabindex="0" aria-label="Blow out candle 5">
+            <div class="candle-flame" aria-hidden="true"></div>
+            <div class="candle-wick" aria-hidden="true"></div>
+            <div class="candle-body"></div>
+            <div class="candle-smoke" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <!-- Cake layers -->
+        <div class="cake">
+          <div class="cake-layer cake-layer-top"></div>
+          <div class="cake-layer cake-layer-middle"></div>
+          <div class="cake-layer cake-layer-bottom"></div>
+        </div>
+      </div>
+
+      <p class="blow-instruction animate-on-scroll" data-delay="600">
+        ✨ Tap the candles to blow them out ✨
+      </p>
+
+      <div id="wish-text" aria-live="polite">
+        <p class="wish-message"></p>
+      </div>
+    </section>
+
+    <!-- ---- FOOTER ---- -->
+    <footer class="footer">
+      <div class="footer-heart" aria-hidden="true">💝</div>
+      <p>Made with infinite love, just for you</p>
+      <p
+        style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-top: 1rem; color: var(--gold); text-shadow: 0 0 20px rgba(255,215,0,0.5), 0 0 40px rgba(255,215,0,0.3); letter-spacing: 0.15em;">
+        Reethuu 💛
+      </p>
+      <p style="font-size: 0.75rem; margin-top: 0.5rem; opacity: 0.5;">
+        Happy Birthday 2026 ❤️
+      </p>
+    </footer>
+  </main>
+
+  <!-- ============================================
+       THEME SELECTOR
+       ============================================ -->
+  <div class="theme-selector" role="radiogroup" aria-label="Color theme selector">
+    <button class="theme-dot active" data-theme="midnight-rose" aria-label="Midnight Rose theme" role="radio"
+      aria-checked="true"></button>
+    <button class="theme-dot" data-theme="golden-hour" aria-label="Golden Hour theme" role="radio"
+      aria-checked="false"></button>
+    <button class="theme-dot" data-theme="ocean-dream" aria-label="Ocean Dream theme" role="radio"
+      aria-checked="false"></button>
+    <button class="theme-dot" data-theme="enchanted-forest" aria-label="Enchanted Forest theme" role="radio"
+      aria-checked="false"></button>
+    <button class="theme-dot" data-theme="royal-purple" aria-label="Royal Purple theme" role="radio"
+      aria-checked="false"></button>
+  </div>
+
+  <!-- ============================================
+       MUSIC PLAYER
+       ============================================ -->
+  <button id="music-toggle" aria-label="Toggle background music">
+    <span class="music-icon" aria-hidden="true">🎵</span>
+    <div class="waveform-bars" aria-hidden="true"></div>
+  </button>
+
+  <!-- ============================================
+       MOBILE NAVIGATION
+       ============================================ -->
+  <nav class="mobile-nav" aria-label="Section navigation">
+    <div class="mobile-nav-inner">
+      <a href="#countdown-section" class="mobile-nav-item active">
+        <span class="mobile-nav-icon">⏰</span>
+        Timer
+      </a>
+      <a href="#gallery" class="mobile-nav-item">
+        <span class="mobile-nav-icon">📸</span>
+        Photos
+      </a>
+      <a href="#love-message" class="mobile-nav-item">
+        <span class="mobile-nav-icon">💌</span>
+        Letter
+      </a>
+      <a href="#timeline" class="mobile-nav-item">
+        <span class="mobile-nav-icon">💫</span>
+        Journey
+      </a>
+      <a href="#celebration" class="mobile-nav-item">
+        <span class="mobile-nav-icon">🎂</span>
+        Wish
+      </a>
+    </div>
+  </nav>
+
+  <!-- Scripts (order matters) -->
+  <script src="utils.js"></script>
+  <script src="particles.js"></script>
+  <script src="fireworks.js"></script>
+  <script src="animations.js"></script>
+  <script src="gallery.js"></script>
+  <script src="audio.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>
