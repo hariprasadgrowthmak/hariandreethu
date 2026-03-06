@@ -15,28 +15,28 @@ const Gallery = (() => {
     // Demo photos - these will be replaced with actual uploaded photos
     // All real photos — sorted by timestamp from filename
     const demoPhotos = [
-        { src: 'WhatsApp Image 2026-03-06 at 6.10.01 PM.jpeg', caption: 'The moment it all began 💕', date: 'September 2023' },
-        { src: 'WhatsApp Image 2026-03-06 at 6.55.05 PM.jpeg', caption: 'Our first holiday season together ✨', date: 'December 2023' },
-        { src: 'WhatsApp Image 2026-03-06 at 6.55.05 PM (1).jpeg', caption: 'Smiling with you 😊', date: 'December 2023' },
-        { src: 'WhatsApp Image 2026-03-06 at 6.55.07 PM.jpeg', caption: '6 months of us 🥂', date: 'March 2024' },
-        { src: 'WhatsApp Image 2026-03-06 at 6.55.07 PM (1).jpeg', caption: 'Every moment matters 💖', date: 'March 2024' },
-        { src: 'WhatsApp Image 2026-03-06 at 6.55.08 PM.jpeg', caption: 'Summer adventures with you 🌞', date: 'June 2024' },
-        { src: 'WhatsApp Image 2026-03-06 at 6.55.08 PM (1).jpeg', caption: 'Golden days together ☀️', date: 'June 2024' },
-        { src: 'WhatsApp Image 2026-03-06 at 6.55.09 PM.jpeg', caption: '1 year anniversary ❤️', date: 'September 2024' },
-        { src: 'WhatsApp Image 2026-03-06 at 6.55.09 PM (1).jpeg', caption: 'One whole year of you 🌹', date: 'September 2024' },
-        { src: 'WhatsApp Image 2026-03-06 at 6.55.09 PM (2).jpeg', caption: 'My favorite person in the world 💕', date: 'September 2024' },
-        { src: 'WhatsApp Image 2026-03-06 at 6.55.09 PM (3).jpeg', caption: 'Memories I\'ll cherish forever 🌟', date: 'October 2024' },
-        { src: 'WhatsApp Image 2026-03-06 at 6.55.10 PM.jpeg', caption: 'Our second Christmas together 🎄', date: 'December 2024' },
-        { src: 'WhatsApp Image 2026-03-06 at 6.55.10 PM (1).jpeg', caption: 'Home is wherever you are 🏡', date: 'December 2024' },
-        { src: 'WhatsApp Image 2026-03-06 at 6.55.11 PM.jpeg', caption: 'New Year, same love — better than ever 🥂', date: 'January 2025' },
-        { src: 'WhatsApp Image 2026-03-06 at 6.55.11 PM (1).jpeg', caption: 'Every day is a gift with you 💝', date: 'January 2025' },
-        { src: 'WhatsApp Image 2026-03-06 at 6.55.11 PM (2).jpeg', caption: 'Your smile is my whole world 😍', date: 'March 2025' },
-        { src: 'WhatsApp Image 2026-03-06 at 6.55.12 PM.jpeg', caption: '2 years of us 🌹', date: 'September 2025' },
-        { src: 'WhatsApp Image 2026-03-06 at 6.55.12 PM (1).jpeg', caption: 'Two years and still falling for you 💞', date: 'September 2025' },
-        { src: 'WhatsApp Image 2026-03-06 at 6.55.12 PM (2).jpeg', caption: 'Side by side, always ✨', date: 'October 2025' },
-        { src: 'WhatsApp Image 2026-03-06 at 6.55.13 PM.jpeg', caption: 'New Year\'s Eve — new chapter begins 🥂', date: 'December 2025' },
-        { src: 'WhatsApp Image 2026-03-06 at 6.55.13 PM (1).jpeg', caption: 'Ringing in 2026 together 🎆', date: 'January 2026' },
-        { src: 'WhatsApp Image 2026-03-06 at 6.55.15 PM.jpeg', caption: 'Today & always — 2 years 6 months 💝', date: 'March 2026' },
+        { src: 'WhatsApp Image 2026-03-06 at 6.10.01 PM.jpeg', objPos: 'center center', caption: 'The moment it all began 💕', date: 'September 2023' },
+        { src: 'WhatsApp Image 2026-03-06 at 6.55.05 PM.jpeg', objPos: 'center center', caption: 'Our first holiday season together ✨', date: 'December 2023' },
+        { src: 'WhatsApp Image 2026-03-06 at 6.55.05 PM (1).jpeg', objPos: 'center top', caption: 'Smiling with you 😊', date: 'December 2023' },
+        { src: 'WhatsApp Image 2026-03-06 at 6.55.07 PM.jpeg', objPos: 'center top', caption: '6 months of us 🥂', date: 'March 2024' },
+        { src: 'WhatsApp Image 2026-03-06 at 6.55.07 PM (1).jpeg', objPos: 'center top', caption: 'Every moment matters 💖', date: 'March 2024' },
+        { src: 'WhatsApp Image 2026-03-06 at 6.55.08 PM.jpeg', objPos: 'center top', caption: 'Summer adventures with you 🌞', date: 'June 2024' },
+        { src: 'WhatsApp Image 2026-03-06 at 6.55.08 PM (1).jpeg', objPos: 'center center', caption: 'Golden days together ☀️', date: 'June 2024' },
+        { src: 'WhatsApp Image 2026-03-06 at 6.55.09 PM.jpeg', objPos: 'center center', caption: '1 year anniversary ❤️', date: 'September 2024' },
+        { src: 'WhatsApp Image 2026-03-06 at 6.55.09 PM (1).jpeg', objPos: 'center top', caption: 'One whole year of you 🌹', date: 'September 2024' },
+        { src: 'WhatsApp Image 2026-03-06 at 6.55.09 PM (2).jpeg', objPos: 'center top', caption: 'My favorite person in the world 💕', date: 'September 2024' },
+        { src: 'WhatsApp Image 2026-03-06 at 6.55.09 PM (3).jpeg', objPos: 'center top', caption: 'Memories I\'ll cherish forever 🌟', date: 'October 2024' },
+        { src: 'WhatsApp Image 2026-03-06 at 6.55.10 PM.jpeg', objPos: 'center top', caption: 'Our second Christmas together 🎄', date: 'December 2024' },
+        { src: 'WhatsApp Image 2026-03-06 at 6.55.10 PM (1).jpeg', objPos: 'center top', caption: 'Home is wherever you are 🏡', date: 'December 2024' },
+        { src: 'WhatsApp Image 2026-03-06 at 6.55.11 PM.jpeg', objPos: 'center center', caption: 'New Year, same love — better than ever 🥂', date: 'January 2025' },
+        { src: 'WhatsApp Image 2026-03-06 at 6.55.11 PM (1).jpeg', objPos: 'center center', caption: 'Every day is a gift with you 💝', date: 'January 2025' },
+        { src: 'WhatsApp Image 2026-03-06 at 6.55.11 PM (2).jpeg', objPos: 'center center', caption: 'Your smile is my whole world 😍', date: 'March 2025' },
+        { src: 'WhatsApp Image 2026-03-06 at 6.55.12 PM.jpeg', objPos: 'center top', caption: '2 years of us 🌹', date: 'September 2025' },
+        { src: 'WhatsApp Image 2026-03-06 at 6.55.12 PM (1).jpeg', objPos: 'center top', caption: 'Two years and still falling for you 💞', date: 'September 2025' },
+        { src: 'WhatsApp Image 2026-03-06 at 6.55.12 PM (2).jpeg', objPos: 'center top', caption: 'Side by side, always ✨', date: 'October 2025' },
+        { src: 'WhatsApp Image 2026-03-06 at 6.55.13 PM.jpeg', objPos: 'center top', caption: 'New Year\'s Eve — new chapter begins 🥂', date: 'December 2025' },
+        { src: 'WhatsApp Image 2026-03-06 at 6.55.13 PM (1).jpeg', objPos: 'center top', caption: 'Ringing in 2026 together 🎆', date: 'January 2026' },
+        { src: 'WhatsApp Image 2026-03-06 at 6.55.15 PM.jpeg', objPos: 'center top', caption: 'Today & always — 2 years 6 months 💝', date: 'March 2026' },
     ];
 
     // Generate gradient placeholder images
@@ -123,7 +123,7 @@ const Gallery = (() => {
             card.innerHTML = `
         <div class="polaroid-inner">
           <div class="polaroid-image-wrap">
-            <img src="${photo.src}" alt="${photo.caption}" loading="lazy" />
+            <img src="${photo.src}" alt="${photo.caption}" loading="lazy" style="object-position: ${photo.objPos || 'center center'}" />
           </div>
           <div class="polaroid-caption">
             <p>${photo.caption}</p>
